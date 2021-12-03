@@ -11,5 +11,14 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+import Sortable from 'sortablejs';
+
 
 import "../stylesheets/application"
+
+
+document.addEventListener('turbolinks:load',() => {
+  var el = document.getElementById('tasks-list');
+  var sortable = Sortable.create(el, {
+    animation: 150  });
+})
